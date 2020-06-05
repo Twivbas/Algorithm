@@ -1,0 +1,19 @@
+Basic Algorithm Scripting: Reverse a StringPassed
+Reverse the provided string.
+
+You may need to turn the string into an array before you can reverse it.
+
+Your result must be a string.
+
+Answer：
+
+function reverseString(str) {
+  let arr = [];
+  for (let i = 0; i < str.length; i++) {
+    arr[str.length-1-i] = str[i];
+  } 
+  str = arr.join('');
+  return str;
+}
+
+reverseString("hello");
