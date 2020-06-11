@@ -1,0 +1,16 @@
+Intermediate Algorithm Scripting: Spinal Tap Case
+Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
+
+Answer:
+
+function spinalCase(str) {
+  //在大写字母前加空格
+  str = str.replace(/([a-z])([A-Z])/g, "$1 $2");
+  let string = str.toLowerCase();
+  let arr = string.split(/\s|_/g);
+  str = arr.join('-');
+
+  return str;
+}
+
+spinalCase("AllThe-small Things");
