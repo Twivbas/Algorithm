@@ -1,0 +1,27 @@
+Return true if the passed string looks like a valid US phone number.
+
+Answer1：
+
+function telephoneCheck(str) {
+  if (str[0] === '-' || str.lastIndexOf(')') !== str.indexOf(')'))  return false;
+
+  if (((str.indexOf(')') - str.indexOf('(') === 4)&&(str.indexOf('(') >= 0)) || str.indexOf(')') === str.indexOf('(')) {
+    
+    str = str.replace(/[\W]/g,'');
+    if (str.length === 10 || (str.length === 11 && str[0] == 1) ) {
+      return true;
+    } 
+  }
+  return false;
+}
+
+telephoneCheck("(555)5(55?)-5555");
+
+Answer2：
+
+function telephoneCheck(str) {
+  var regex = /^(1\s?)?(\(\d{3}\)|\d{3})[\s\-]?\d{3}[\s\-]?\d{4}$/;
+  return regex.test(str);
+}
+
+telephoneCheck("555-555-5555");
